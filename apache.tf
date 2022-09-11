@@ -39,7 +39,7 @@ resource "aws_instance" "apache" {
   #key_name="test"
   key_name = aws_key_pair.demo.id
 
-  user_data = file(jenkins-install.sh)
+  #user_data = file(jenkins-install.sh)
 
   tags = {
     Name = "apache"

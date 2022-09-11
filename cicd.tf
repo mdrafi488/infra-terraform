@@ -39,7 +39,7 @@ resource "aws_security_group" "cicd" {
 
   key_name = aws_key_pair.demo.id
 
-  user_data = file(apache-install.sh)
+  #user_data = file(jenkins-install.sh)
 
   tags = {
     Name = "cicd"
