@@ -1,4 +1,4 @@
-resource "aws_security_group" "cicd" {
+resource "aws_security_group" "cicd-sg" {
   name        = "cicd-sg"
   description = "Allow end user with http"
   vpc_id      = "vpc-049f215e85a9ff2c2"
