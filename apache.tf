@@ -36,6 +36,7 @@ resource "aws_instance" "apache" {
 
   subnet_id = "subnet-072762878afe76c41"
   vpc_security_group_ids=[aws_security_group.apache.id]
+  
   #key_name="test"
   key_name = aws_key_pair.demo.id
 

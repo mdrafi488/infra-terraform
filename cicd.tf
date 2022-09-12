@@ -35,7 +35,7 @@ resource "aws_security_group" "cicd-sg" {
   instance_type = "t2.micro"
 
   subnet_id = "subnet-072762878afe76c41"
-  vpc_security_group_ids=[aws_security_group.cicd.id]
+  vpc_security_group_ids=[aws_security_group.cicd-sg.id]
   #key_name="test"
 
   key_name = aws_key_pair.demo.id
