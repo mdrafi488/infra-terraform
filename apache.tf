@@ -47,7 +47,7 @@ resource "aws_instance" "apache" {
   }
 }
 
-resource "aws_instance" "grafana" {
+/* resource "aws_instance" "grafana" {
   ami           = "ami-0b89f7b3f054b957e"
   instance_type = "t2.micro"
 
@@ -62,4 +62,4 @@ resource "aws_instance" "grafana" {
   tags = {
     Name = "grafana"
   }
-}
+} */
