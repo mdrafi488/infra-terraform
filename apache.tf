@@ -46,3 +46,20 @@ resource "aws_instance" "apache" {
     Name = "apache"
   }
 }
+
+resource "aws_instance" "grafana" {
+  ami           = "ami-0b89f7b3f054b957e"
+  instance_type = "t2.micro"
+
+  subnet_id = "subnet-072762878afe76c41"
+  vpc_security_group_ids=[aws_security_group.apache.id]
+  
+  #key_name="test"
+  key_name = aws_key_pair.demo.id
+
+  #user_data = file(jenkins-install.sh)
+
+  tags = {
+    Name = "grafana"
+  }
+}
