@@ -40,7 +40,16 @@ resource "aws_security_group" "cicd-sg" {
 
   key_name = aws_key_pair.demo.id
 
-  #user_data = file(jenkins-install.sh)
+    user_data              = <<-EOF
+wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum upgrade
+amazon-linux-extras install java-openjdk11
+yum install jenkin
+systemctl start jenkins
+systemctl enable jenkins
+              EOF
 
   tags = {
     Name = "cicd"
