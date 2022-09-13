@@ -40,7 +40,13 @@ resource "aws_instance" "apache" {
   #key_name="test"
   key_name = aws_key_pair.demo.id
 
-  #user_data = file(jenkins-install.sh)
+  user_data              = <<-EOF
+              #!/bin/bash
+              yum update -y
+              yum install httpd -y
+              systemctl start httpd 
+              systemctl enable httpd
+              EOF
 
   tags = {
     Name = "apache"
