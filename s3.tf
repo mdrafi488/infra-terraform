@@ -1,9 +1,9 @@
-resource "aws_s3_bucket" "bucket-rafi-nlr" {
-  bucket = "bucket-rafi-nlr"
+resource "aws_s3_bucket" "bucket-rafi-nlr3" {
+  bucket = "bucket-rafi-nlr3"
   acl    = "private"
 
   tags = {
-    Name        = "bucket-rafi-nlr"
+    Name        = "bucket-rafi-nlr3"
     Environment = "Dev"
   }
 }
