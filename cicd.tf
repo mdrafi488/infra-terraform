@@ -36,6 +36,8 @@ resource "aws_security_group" "cicd-sg" {
 
   subnet_id = "subnet-072762878afe76c41"
   vpc_security_group_ids=[aws_security_group.cicd-sg.id]
+
+  iam_instance_profile = aws_iam_instance_profile.artifactory.name
   #key_name="test"
 
   key_name = aws_key_pair.demo.id
