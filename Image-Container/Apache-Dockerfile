@@ -1,0 +1,14 @@
+# Setup the apache
+
+FROM ec2-image-ami--base image
+
+# FROM amazon linux
+RUN yum install httpd -y
+RUN systemctl start httpd
+RUN systemctl enable httpd
+RUN aws s3 cp s3://bucket/name.zip
+RUN unzip name.zip
+RUN cp -r * /var/www/html/
+
+CMD['systemctl start httpd'] or
+ENTRYPOIN ['systemctl start httpd']
